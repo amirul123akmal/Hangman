@@ -107,4 +107,10 @@ namespace Hangman
 	end:
 		printf("");
 	}
+
+	void stop()
+	{
+		std::cin.ignore();
+		std::cin.get();
+	}
 }

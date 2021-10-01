@@ -19,4 +19,6 @@ namespace Hangman
 	
 	void chooseSetting();
 	void run();
+
+	void stop();
 }
