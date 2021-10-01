@@ -64,27 +64,47 @@ namespace Hangman
 
 	void run()
 	{
+		std::vector<char> hint{};
+		char guess;
+
+		// initialize all the stages availibility to this function
 		stage episode;
+
+		// loadd all the text into array
 		loadChoices();
-		basic::clear();
-		
-		#if _DEBUG
-			for (const std::string haha : list)
-			{
-				std::cout << haha << std::endl;;
-			}
-		#endif
-		
+
 		// Get random word
-		std::string theWord = list[basic::random(0, list.size() - 1)];
+		std::string theWord = list[basic::random(1, list.size() - 2)];
+		// Give players hint how many character in that alphabets
+		for (int i = 0;i <= theWord.size();i++)
+		{
+			hint.push_back('*');
+		}
 
 		for (int i = 0; i < 5; i++)
 		{
-			episode.chooseStage(i);
-			for (int j = 0; j < theWord.size(); j++)
+		same:
+			episode.chooseStage(i + 1);
+			basic::printIt(hint);
+			if (basic::comparison(hint))
 			{
-				printf("*");
+				goto win;
+			}
+			basic::printColored("\nInsert your guess here:", 2, false);
+			std::cin >> guess;
+			if (basic::ifExsit(theWord, guess))
+			{
+				hint = basic::replace(theWord, hint, guess);
+				goto same;
 			}
 		}
+		// lose 
+		basic::printColored("The Man are dead, try again", 1, true);
+		basic::printColored("The answer is "+theWord, 1, true);
+		goto end;
+	win:
+		basic::printColored("\n\nCongratulation, you saved that man live", 3, true);
+	end:
+		printf("");
 	}
 }
