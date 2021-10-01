@@ -6,13 +6,24 @@ To help him, you need to guess the correct word
 #### Detail
 * Visual Studio 2019
 * CLI Games
-* Binary is not yet ready, but you may compile it yourself
+
+#### How to play
+1. De-compress `CHang.zip`
+2. Goes intoe the folder and run `Hangman.exe`
+
+#### How do you want to compile yourself
+1. Open Solution File `Hangman.sln`
+2. At `Solution Explorer`, right click the project and press build and/or
+3. Press `Local Windows Debugger` and start playing right away
 
 #### TODO
 - The player [✅]
 - The Random word [✅]
-- Able players to guess [❌] - on going 
-- Hint-ing [❌]
-- Score [❌]
+- Able players to guess [✅]
+- Hint-ing [✅]
+- Win / Lose Detection [✅]
+- Color Coded text [✅]
+- Score [❌] - in the future, maybe useless
+- Beautiful outro for Win/Lose [❌] -in the future
 
 
