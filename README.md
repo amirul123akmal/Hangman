@@ -9,7 +9,7 @@ To help him, you need to guess the correct word
 
 #### How to play
 1. De-compress `CHang.zip`
-2. Goes intoe the folder and run `Hangman.exe`
+2. Goes into the folder and run `Hangman.exe`
 
 #### How do you want to compile yourself
 1. Open Solution File `Hangman.sln`
